@@ -1,11 +1,16 @@
 class UserFactory {
-  createUser() {
+  createUser(overrrides = {}) {
     const timestamp = Date.now();
-    return {
-      nome: `User ${timestamp}`,
+
+    const defaultUser = {
+      nome: `Mouts ${timestamp}`,
       email: `mail${timestamp}@mouts.com`,
       password: `123456`,
       administrador: "false",
+    };
+    return {
+      ...defaultUser,
+      ...overrrides,
     };
   }
 }

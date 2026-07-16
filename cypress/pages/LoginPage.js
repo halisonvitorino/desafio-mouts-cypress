@@ -27,9 +27,13 @@ class LoginPage {
     this.loginButton().click();
   }
 
-  login(email, password) {
-    this.fillEmail(email);
-    this.fillPassword(password);
+  clickSignUpLink() {
+    this.signUpLink().click();
+  }
+
+  login(userData) {
+    this.fillEmail(userData.email);
+    this.fillPassword(userData.password);
     this.clickLoginButton();
   }
 }

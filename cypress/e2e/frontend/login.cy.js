@@ -17,7 +17,7 @@ describe("Login", () => {
 
   // Como um usuário recém-cadastrado, via API, quero fazer login para acessar o sistema com sucesso.
   it("should log in successfully with valid credentials", () => {
-    loginPage.login(userData.email, userData.password);
+    loginPage.login(userData);
     cy.url().should("include", "/home");
     cy.contains("Serverest Store").should("be.visible");
     cy.contains("Logout").should("be.visible");

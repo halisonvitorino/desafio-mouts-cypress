@@ -14,4 +14,8 @@ module.exports = defineConfig({
       return config;
     },
   },
+
+  env: {
+    apiUrl: "https://serverest.dev",
+  },
 });

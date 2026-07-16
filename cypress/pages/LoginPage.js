@@ -3,16 +3,34 @@ class LoginPage {
     return cy.get('[data-testid="email"]');
   }
 
-  senhaInput() {
+  passwordInput() {
     return cy.get('[data-testid="senha"]');
   }
 
-  entrarButton() {
+  loginButton() {
     return cy.get('[data-testid="entrar"]');
   }
 
-  cadastrarLink() {
+  signUpLink() {
     return cy.get('[data-testid="cadastrar"]');
+  }
+
+  fillEmail(email) {
+    this.emailInput().type(email);
+  }
+
+  fillPassword(password) {
+    this.passwordInput().type(password);
+  }
+
+  clickLoginButton() {
+    this.loginButton().click();
+  }
+
+  login(email, password) {
+    this.fillEmail(email);
+    this.fillPassword(password);
+    this.clickLoginButton();
   }
 }
 

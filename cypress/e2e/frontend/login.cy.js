@@ -7,7 +7,7 @@ describe("Login", () => {
 
   beforeEach(() => {
     userData = userFactory.createUser();
-    userService.createUser(userData).then((response) => {
+    userService.createUserOnApi(userData).then((response) => {
       expect(response.status).to.eq(201);
       expect(response.body.message).to.eq("Cadastro realizado com sucesso");
       expect(response.body).to.have.property("_id");

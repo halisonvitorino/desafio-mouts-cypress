@@ -12,10 +12,8 @@ describe("Sign up", () => {
     cy.visit("/");
   });
 
-  // Como um usuário com sucesso.
   it("should sign up a new user successfully", () => {
     loginPage.clickSignUpLink();
-    //cy.url().should("include", "/cadastrarusuarios");
     registerUserPage.signUp(userData);
     cy.url().should("include", "/home");
     cy.contains("Serverest Store").should("be.visible");

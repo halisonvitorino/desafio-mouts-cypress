@@ -42,5 +42,4 @@ class RegisterUserPage {
     this.clickSignUpButton();
   }
 }
-
 export default new RegisterUserPage();

@@ -3,3 +3,7 @@ cypress/videos/
 cypress/screenshots/
 mochawesome-report/
 reports/
+cypress/downloads/
+*.log
+.env
+.DS_Store

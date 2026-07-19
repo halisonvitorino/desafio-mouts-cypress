@@ -6,7 +6,7 @@ import productListPage from "../../pages/ShoppingListPage.js";
 
 describe("Shopping List", () => {
   let userData;
-  const productName = "Ergonomic Fresh Salad";
+  const productName = "lixa";
 
   beforeEach(() => {
     userData = userFactory.createUser({

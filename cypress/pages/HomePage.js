@@ -11,11 +11,8 @@ class HomePage {
       .then(($card) => {
         const productName = $card.find("h5").text().trim();
 
-        return cy
-          .wrap($card)
-          .find('[data-testid="adicionarNaLista"]')
-          .click()
-          .then(() => productName);
+        cy.wrap($card).find('[data-testid="adicionarNaLista"]').click();
+        return cy.wrap(productName);
       });
   }
 

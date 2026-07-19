@@ -1,9 +1,12 @@
 node_modules/
+
 cypress/videos/
 cypress/screenshots/
+cypress/reports/
 mochawesome-report/
 reports/
 cypress/downloads/
+
 *.log
 .env
 .DS_Store

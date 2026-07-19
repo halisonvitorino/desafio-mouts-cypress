@@ -6,7 +6,6 @@ import productListPage from "../../pages/ShoppingListPage.js";
 
 describe("Shopping List", () => {
   let userData;
-  const productName = "Awesome Metal Pizza";
 
   beforeEach(() => {
     userData = userFactory.createUser({
@@ -20,10 +19,14 @@ describe("Shopping List", () => {
   });
 
   it("should add a product to shopping list", () => {
-    homePage.addProductToShoppingList(productName);
-    cy.url().should("include", "/minhaListaDeProdutos");
-    productListPage.pageTitle().should("be.visible");
-    productListPage.shouldDisplayProduct(productName);
-    productListPage.shouldDisplayQuantity(1);
+    homePage.addProductToShoppingList().then((productName) => {
+      cy.log(`Produto: ${productName}`);
+      console.log(productName);
+
+      cy.url().should("include", "/minhaListaDeProdutos");
+      productListPage.pageTitle().should("be.visible");
+      productListPage.shouldDisplayProduct(productName);
+      productListPage.shouldDisplayQuantity(1);
+    });
   });
 });

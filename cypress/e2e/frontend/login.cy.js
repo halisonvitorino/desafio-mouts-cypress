@@ -15,7 +15,6 @@ describe("Login", () => {
     cy.visit("/");
   });
 
-  // Como um usuário recém-cadastrado, via API, quero fazer login para acessar o sistema com sucesso.
   it("should log in successfully with valid credentials", () => {
     loginPage.login(userData);
     cy.url().should("include", "/home");

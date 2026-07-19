@@ -22,31 +22,25 @@ describe("Products API", () => {
         expect(loginResponse.status).to.eq(200);
         const token = loginResponse.body.authorization;
 
-        productService
-          .createProduct(productData, token)
-          .then((createProductResponse) => {
-            expect(createProductResponse.status).to.eq(201);
+        productService.createProduct(productData, token).then((createProductResponse) => {
+          expect(createProductResponse.status).to.eq(201);
 
-            const productId = createProductResponse.body._id;
+          const productId = createProductResponse.body._id;
 
-            productService
-              .getProductById(productId)
-              .then((getProductResponse) => {
-                expect(getProductResponse.body).to.deep.include({
-                  nome: productData.nome,
-                  preco: productData.preco,
-                  descricao: productData.descricao,
-                  quantidade: productData.quantidade,
-                  _id: productId,
-                });
-              });
-
-            productService
-              .deleteProduct(productId, token)
-              .then((deleteProductRespose) => {
-                expect(deleteProductRespose.status).to.eq(200);
-              });
+          productService.getProductById(productId).then((getProductResponse) => {
+            expect(getProductResponse.body).to.deep.include({
+              nome: productData.nome,
+              preco: productData.preco,
+              descricao: productData.descricao,
+              quantidade: productData.quantidade,
+              _id: productId,
+            });
           });
+
+          productService.deleteProduct(productId, token).then((deleteProductRespose) => {
+            expect(deleteProductRespose.status).to.eq(200);
+          });
+        });
 
         userService.deleteUser(userAdminId).then((deleteResponse) => {
           expect(deleteResponse.status).to.eq(200);

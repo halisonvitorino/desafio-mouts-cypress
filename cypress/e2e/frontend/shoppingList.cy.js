@@ -6,7 +6,7 @@ import productListPage from "../../pages/ShoppingListPage.js";
 
 describe("Shopping List", () => {
   let userData;
-  const productName = "Logitech MX Vertical";
+  const productName = "Ergonomic Fresh Salad";
 
   beforeEach(() => {
     userData = userFactory.createUser({
@@ -19,7 +19,6 @@ describe("Shopping List", () => {
     loginPage.login(userData);
   });
 
-  // Como um usuário com sucesso.
   it("should add a product to shopping list", () => {
     homePage.addProductToShoppingList(productName);
     cy.url().should("include", "/minhaListaDeProdutos");

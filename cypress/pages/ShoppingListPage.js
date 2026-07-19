@@ -4,10 +4,7 @@ class ShoppingListPage {
   }
 
   productName(productName) {
-    return cy.contains(
-      '[data-testid="shopping-cart-product-name"]',
-      productName,
-    );
+    return cy.contains('[data-testid="shopping-cart-product-name"]', productName);
   }
 
   shouldDisplayProduct(productName) {

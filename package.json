@@ -1,19 +1,35 @@
 {
   "name": "desafio-mouts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto de automação de testes Frontend e API com Cypress e JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "test:frontend": "cypress run --spec \"cypress/e2e/frontend/**/*.cy.js\"",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**/*.cy.js\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "keywords": [],
+  "keywords": [
+    "cypress",
+    "javascript",
+    "e2e",
+    "api-testing",
+    "test-automation"
+  ],
   "author": "Halison Vitorino",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^15.18.1"
-  },
-  "allowScripts": {
-    "cypress@15.18.1": true
+    "@eslint/js": "^10.0.1",
+    "cypress": "^15.18.1",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^6.4.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5"
   }
 }

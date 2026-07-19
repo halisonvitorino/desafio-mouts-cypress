@@ -11,18 +11,17 @@ describe("Shopping List", () => {
     userData = userFactory.createUser({
       administrador: "false",
     });
+
     userService.createUserOnApi(userData).then((response) => {
       expect(response.status).to.eq(201);
     });
+
     cy.visit("/");
     loginPage.login(userData);
   });
 
   it("should add a product to shopping list", () => {
     homePage.addProductToShoppingList().then((productName) => {
-      cy.log(`Produto: ${productName}`);
-      console.log(productName);
-
       cy.url().should("include", "/minhaListaDeProdutos");
       productListPage.pageTitle().should("be.visible");
       productListPage.shouldDisplayProduct(productName);

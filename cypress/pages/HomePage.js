@@ -12,7 +12,8 @@ class HomePage {
         const productName = $card.find("h5").text().trim();
 
         cy.wrap($card).find('[data-testid="adicionarNaLista"]').click();
-        return cy.wrap(productName);
+
+        return cy.then(() => productName);
       });
   }
 

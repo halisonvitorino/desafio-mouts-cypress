@@ -1,16 +1,16 @@
-class UserFactory {
-  createUser(overrrides = {}) {
-    const uniqueId = Date.now();
+import { faker } from "@faker-js/faker";
 
+class UserFactory {
+  createUser(overrides = {}) {
     const defaultUser = {
-      nome: `Mouts ${uniqueId}`,
-      email: `mail${uniqueId}@mouts.com`,
-      password: `123456`,
+      nome: faker.person.fullName(),
+      email: "test_" + faker.internet.email().toLowerCase(),
+      password: faker.internet.password({ length: 6 }),
       administrador: "false",
     };
     return {
       ...defaultUser,
-      ...overrrides,
+      ...overrides,
     };
   }
 }

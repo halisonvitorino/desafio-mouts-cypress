@@ -25,6 +25,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.5.0",
     "cypress": "^15.18.1",
     "cypress-mochawesome-reporter": "^4.0.2",
     "eslint": "^10.7.0",
@@ -34,6 +35,7 @@
     "prettier": "^3.9.5"
   },
   "allowScripts": {
-    "cypress-mochawesome-reporter@4.0.2": true
+    "cypress-mochawesome-reporter@4.0.2": true,
+    "@faker-js/faker@10.5.0": true
   }
 }

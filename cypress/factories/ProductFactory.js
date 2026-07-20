@@ -1,14 +1,12 @@
+import { faker } from "@faker-js/faker";
+
 class ProductFactory {
   createProduct() {
-    const uniqueId = "${Date.now()}";
-    const price = Cypress._.random(10, 1000);
-    const quantity = Cypress._.random(1, 100);
-
     const product = {
-      nome: uniqueId,
-      preco: price,
-      descricao: "Automation Product",
-      quantidade: quantity,
+      nome: `${faker.commerce.productName()} ${faker.string.uuid()}`,
+      preco: Math.floor(faker.commerce.price({ min: 10, max: 1000 })),
+      descricao: faker.commerce.productDescription(),
+      quantidade: faker.number.int({ min: 1, max: 100 }),
     };
     return product;
   }
